@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34622.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LMS-notification-api", "LMS-notification-api\LMS-notification-api.csproj", "{BCD43EB0-8C87-4A96-AB3E-A4FB8E3A0138}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{C13211BC-E203-46B3-A8C5-E20F684F30F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic", "Logic\Logic.csproj", "{800EF617-D116-467A-B877-6F05D529957D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BCD43EB0-8C87-4A96-AB3E-A4FB8E3A0138}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCD43EB0-8C87-4A96-AB3E-A4FB8E3A0138}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCD43EB0-8C87-4A96-AB3E-A4FB8E3A0138}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCD43EB0-8C87-4A96-AB3E-A4FB8E3A0138}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C13211BC-E203-46B3-A8C5-E20F684F30F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C13211BC-E203-46B3-A8C5-E20F684F30F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C13211BC-E203-46B3-A8C5-E20F684F30F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C13211BC-E203-46B3-A8C5-E20F684F30F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{800EF617-D116-467A-B877-6F05D529957D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{800EF617-D116-467A-B877-6F05D529957D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{800EF617-D116-467A-B877-6F05D529957D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{800EF617-D116-467A-B877-6F05D529957D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D903F441-1545-46F4-961F-636CB0DFF089}
+	EndGlobalSection
+EndGlobal
