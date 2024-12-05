@@ -29,7 +29,6 @@ public class NotificationRepository : INotificationRepository
 
 		existingNotification.Title = notification.Title;
 		existingNotification.PlanId = notification.PlanId;
-		existingNotification.UserId = notification.UserId;
 
 		_dbContext.Notifications.Update(existingNotification);
 		await _dbContext.SaveChangesAsync();
@@ -56,7 +55,7 @@ public class NotificationRepository : INotificationRepository
 	public async Task DeleteByPlanAsync(Guid planId, Guid userId)
 	{
 		var notifications = await _dbContext.Notifications
-			.Where(n => n.PlanId == planId && n.UserId == userId)
+			.Where(n => n.PlanId == planId)
 			.ToListAsync();
 
 		if (notifications.Any())
@@ -75,12 +74,5 @@ public class NotificationRepository : INotificationRepository
 		}
 
 		return notification;
-	}
-
-	public async Task<List<Notification>> GetAllAsync(Guid userId)
-	{
-		return await _dbContext.Notifications
-			.Where(n => n.UserId == userId)
-			.ToListAsync();
 	}
 }

@@ -29,7 +29,7 @@ public class NotificationService : INotificationService
 
 	public async Task DeleteByPlanAsync(Guid planId, Guid userId)
 	{
-		await _notificationRepository.DeleteByPlanAsync(planId, userId);
+		await _notificationRepository.DeleteByPlanAsync(planId, new List<Guid>(){userId}); 
 	}
 
 	public async Task<Notification> GetAsync(Guid notificationId)
@@ -39,7 +39,7 @@ public class NotificationService : INotificationService
 
 	public async Task<List<Notification>> GetAllAsync(Guid userId)
 	{
-		return await _notificationRepository.GetAllAsync(userId);
+		return await _notificationRepository.GetAllAsync(new List<Guid>() { userId });
 	}
 
 	public async Task UpdateAsync(Notification notification)

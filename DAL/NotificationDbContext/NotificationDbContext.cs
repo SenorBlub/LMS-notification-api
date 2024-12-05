@@ -25,9 +25,6 @@ public class NotificationDbContext : DbContext
 
 			entity.Property(n => n.PlanId)
 				.IsRequired();
-
-			entity.Property(n => n.UserId)
-				.IsRequired();
 		});
 	}
 }
