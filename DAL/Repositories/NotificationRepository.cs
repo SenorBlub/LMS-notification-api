@@ -52,11 +52,12 @@ public class NotificationRepository : INotificationRepository
 		await _dbContext.SaveChangesAsync();
 	}
 
-	public async Task DeleteByPlanAsync(Guid planId, Guid userId)
+	public async Task DeleteByPlanAsync(Guid planId, List<Guid> notificationIds)
 	{
-		var notifications = await _dbContext.Notifications
-			.Where(n => n.PlanId == planId)
+		List<Notification> notifications = await _dbContext.Notifications
+			.Where(n => notificationIds.Contains(n.Id))
 			.ToListAsync();
+
 
 		if (notifications.Any())
 		{
@@ -74,5 +75,18 @@ public class NotificationRepository : INotificationRepository
 		}
 
 		return notification;
+	}
+
+	public async Task<List<Notification>> GetAllAsync(List<Guid> notificationIds)
+	{
+		List<Notification> notifications = await _dbContext.Notifications
+			.Where(n => notificationIds.Contains(n.Id))
+			.ToListAsync();
+		if (notifications == null)
+		{
+			throw new KeyNotFoundException("Notifications not found.");
+		}
+
+		return notifications;
 	}
 }
