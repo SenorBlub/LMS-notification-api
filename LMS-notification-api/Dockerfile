@@ -10,6 +10,8 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["LMS-notification-api/LMS-notification-api.csproj", "LMS-notification-api/"]
+COPY ["DAL/DAL.csproj", "DAL/"]
+COPY ["Logic/Logic.csproj", "Logic/"]
 RUN dotnet restore "./LMS-notification-api/LMS-notification-api.csproj"
 COPY . .
 WORKDIR "/src/LMS-notification-api"

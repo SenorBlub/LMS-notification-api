@@ -16,11 +16,11 @@ namespace LMS_notification_api.Controllers
 			_notificationService = notificationService;
 		}
 
-		[HttpPost]
+		[HttpPost("create")]
 		public async Task<IActionResult> Create([FromBody] Notification notification)
 		{
 			await _notificationService.CreateAsync(notification);
-			return CreatedAtAction(nameof(Get), new { id = notification.Id }, notification);
+			return Ok(notification);
 		}
 
 		[HttpGet("{id}")]
